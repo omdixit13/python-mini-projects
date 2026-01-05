@@ -1,0 +1,30 @@
+# Student Result Analyzer
+
+students = {
+    "Om": 85,
+    "Amit": 72,
+    "Riya": 91,
+    "Karan": 64
+}
+
+def analyze_results(data):
+    total = sum(data.values())
+    average = total / len(data)
+
+    print("Student Results")
+    print("----------------")
+
+    for name, marks in data.items():
+        status = "Pass" if marks >= 40 else "Fail"
+        print(f"{name}: {marks} ({status})")
+
+    print("\nAverage Marks:", average)
+
+    if average >= 75:
+        print("Overall Performance: Excellent")
+    elif average >= 60:
+        print("Overall Performance: Good")
+    else:
+        print("Overall Performance: Needs Improvement")
+
+analyze_results(students)
